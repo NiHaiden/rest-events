@@ -25,6 +25,7 @@ public class PersonControllerTest {
     class FindingEventsFromPerson {
 
         @Test
+        @DirtiesContext
         void works() throws Exception {
             mockMvc
                     .perform(get("/persons/events?personId=1"))
@@ -44,6 +45,7 @@ public class PersonControllerTest {
         }
 
         @Test
+        @DirtiesContext
         void fails_for_invalid_person_id() throws Exception {
             mockMvc
                     .perform(get("/persons/events?personId=404"))
@@ -86,6 +88,7 @@ public class PersonControllerTest {
         }
 
         @Test
+        @DirtiesContext
         void fails_for_invalid_person_id() throws Exception {
             var json = """
                     {
@@ -104,6 +107,7 @@ public class PersonControllerTest {
          * Person 3 ist zu dieser Zeit in der Oper
          */
         @Test
+        @DirtiesContext
         void fails_for_conflicting_events() throws Exception {
             var json = """
                     {

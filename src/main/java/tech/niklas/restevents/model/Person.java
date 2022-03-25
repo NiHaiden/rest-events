@@ -1,5 +1,6 @@
 package tech.niklas.restevents.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -30,6 +31,7 @@ public class Person implements Serializable {
     @JoinTable(name = "persons_events", joinColumns = @JoinColumn(name = "person_id"),
             inverseJoinColumns = @JoinColumn(name = "event_id"))
     @ToString.Exclude
+    @JsonIgnore
     private Set<Person> events = new HashSet<>();
 
     @Override
