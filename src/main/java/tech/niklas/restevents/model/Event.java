@@ -1,5 +1,6 @@
 package tech.niklas.restevents.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -39,6 +40,7 @@ public class Event implements Serializable {
     private LocalDateTime end_time;
 
     @ManyToMany(mappedBy = "events")
+    @JsonIgnore
     private Set<Person> persons = new HashSet<>();
 
     @Override

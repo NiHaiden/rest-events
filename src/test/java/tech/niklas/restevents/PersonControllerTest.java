@@ -81,7 +81,7 @@ public class PersonControllerTest {
                               },
                               {
                                 "id": 3,
-                                "name": "Opera"
+                                "eventName": "Opera"
                               }
                             ]
                              """));

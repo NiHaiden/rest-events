@@ -28,11 +28,11 @@ public class Person implements Serializable {
     private String personName;
 
     @ManyToMany
-    @JoinTable(name = "persons_events", joinColumns = @JoinColumn(name = "person_id"),
-            inverseJoinColumns = @JoinColumn(name = "event_id"))
+    @JoinTable(name = "persons_events", joinColumns = {@JoinColumn(name = "person_id")},
+            inverseJoinColumns = {@JoinColumn(name = "event_id")})
     @ToString.Exclude
     @JsonIgnore
-    private Set<Person> events = new HashSet<>();
+    private Set<Event> events = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {

@@ -23,5 +23,10 @@ public class CentralExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(ConflictingEventException.class)
+    public ResponseEntity<String> handleEventNotFoundEx(ConflictingEventException ex, WebRequest rq) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
 
 }

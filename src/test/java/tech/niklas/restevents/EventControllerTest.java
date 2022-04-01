@@ -32,9 +32,9 @@ public class EventControllerTest {
                             """
                                     {
                                       "id": 1,
-                                      "name": "Brunch",
-                                      "begin": "2022-01-01T08:00:00",
-                                      "end": "2022-01-01T11:00:00"
+                                      "eventName": "Brunch",
+                                      "begin_time": "2022-01-01T08:00:00",
+                                      "end_time": "2022-01-01T11:00:00"
                                     }
                                      """
                     ));
@@ -56,9 +56,9 @@ public class EventControllerTest {
         void works() throws Exception {
             var json = """
                     {
-                      "name":"new",
-                      "begin":"2022-01-02T19:30:00",
-                      "end":"2022-01-02T20:00:00"
+                      "eventName":"new",
+                      "begin_time":"2022-01-02T19:30:00",
+                      "end_time":"2022-01-02T20:00:00"
                     }
                     """;
             var request = post("/events")
